@@ -30,7 +30,7 @@ chmod +x compile.sh
 ```bash
 # in projects directory are some sample .asm files
 # compile and run one of them like this:
-./compile.sh projects.ex1.asm
+./compile.sh projects/ex1.asm
 
 # now you should see some files in tasm, like ex1.obj, ex1.exe, ...
 # the results or running `emu2 code.exe` is printed in terminal
