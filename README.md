@@ -22,17 +22,18 @@ sudo cp emu2 /usr/bin
 ```
 ### *Install:*
 ```bash
-git clone $this_repo
+git clone https://github.com/CosminEugenDinu/16-bit-assembly-tasm-linux.git tasm
 cd tasm
 chmod +x compile.sh
 ```
 ### *Usage:*
 ```bash
 # in projects directory are some sample .asm files
-# compile and run ne of them:
+# compile and run one of them like this:
 ./compile.sh projects.ex1.asm
 
 # now you should see some files in tasm, like ex1.obj, ex1.exe, ...
+# the results or running `emu2 code.exe` is printed in terminal
 # SUCCESS !
 ```
 ### *Description:*
