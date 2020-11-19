@@ -22,8 +22,8 @@ sudo cp emu2 /usr/bin
 ```
 ### *Install:*
 ```bash
-git clone https://github.com/CosminEugenDinu/16-bit-assembly-tasm-linux.git \
-cd 16-bit-assembly-tasm-linux \
+git clone https://github.com/CosminEugenDinu/16-bit-assembly-tasm-linux.git
+cd 16-bit-assembly-tasm-linux
 chmod +x compile.sh
 ```
 ### *Usage:*
