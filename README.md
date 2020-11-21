@@ -35,7 +35,9 @@ chmod +x compile.sh
 # now you should see some files in tasm, like ex1.obj, ex1.exe, ...
 # the results or running `emu2 code.exe` is printed in terminal
 # SUCCESS !
+
 ```
+
 ### *Description:*
 - Compile `asm` file using dosemu:
 ```bash
