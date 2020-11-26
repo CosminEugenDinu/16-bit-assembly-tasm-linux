@@ -21,9 +21,9 @@ dos_command_link="$tasm_dir\\TLINK.EXE /v $basefilename.obj"
 
 compile () {
 # compile (16 bits) with dosemu and tasm.exe
-dosemu -K "$root" -E "$dos_command_compile" &&
+dosemu -K "$root" -E "$dos_command_compile" -dumb &&
 # link objects with tlink.exe
-dosemu -K "$root" -E "$dos_command_link"
+dosemu -K "$root" -E "$dos_command_link" -dumb
 }
 
 # execute in subshell and discard all messages
