@@ -1,0 +1,6 @@
+{
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "assembly": "./compile.sh projects/$fileName"
+    }
+}
