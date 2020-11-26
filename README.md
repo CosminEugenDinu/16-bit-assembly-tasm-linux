@@ -40,6 +40,7 @@ chmod +x compile.sh
 
 ### *Description:*
 - Compile `asm` file using dosemu:
+#### !!! Assembly file name must have max 8 characters for base filename and 3 chars for extension !!!
 ```bash
 # cd to your root project (let's say this includes TASM/TASM.EXE and projects/Code.asm)
 # -K: directory of programs that will be run dos command, -E: dos command, -dumb: view result of dos command
