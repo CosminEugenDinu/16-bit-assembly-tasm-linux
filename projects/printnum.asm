@@ -39,10 +39,11 @@ fill_num_str:
     ; now AX contains 6543 and DX contains 2
 
     ; convert number from DX to ASCII code of that number (by adding '0' character or 48)
-    ; add dl, '0'
-    add dl, 48
+    ; add dx, '0'
+    add dx, 48
 
     ; write cipher from DL to num_str
+    ; use DL instead of DX because place num_str[si] has 8bit (same as DL)
     mov num_str[si], dl
 
     ; decrement SI (index)
