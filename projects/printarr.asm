@@ -4,40 +4,51 @@
 .stack 100h
 
 .data
-    arr_size dw 5 ; size of following array
-    arr dw 11, 12, 13, 14, 15
+    ; size of following array (in bytes)
+    arr_size dw 12 
 
-    str_size dw 15 ; excluding last 3 characters ('\r','\n','$')
-    str_print db 5 dup('..,'), 13, 10, '$'
+    ; new array contains 6 items, each of 2 bytes (dw)
+    ; at index 0 -> 10, at index 2 -> 11, so on ...
+    arr dw 10, 11, 12, 13, 14, 15
+
+    str_size dw 18 ; excluding last 3 characters ('\r','\n','$')
+    ; 6 is the num of items from arr
+    str_print db 6 dup('..,'), 13, 10, '$'
 
     divisor dw 10
 
 .code
 .startup
+    ; SI (Source Index register)
     mov si, arr_size 
+    ; DI (Destination Index register)
+    mov di, str_size
+    
+    dec di ; DI is now 14 (str_print[di] points to last ',')
 
 loop_fill_str:
-    dec si
+    ; decrement SI with 2 => at first run SI is 10 (index 10)
+    sub si, 2
+    ; copy array item in AX
+    mov ax, arr[si]
 
-    ; clear DX register
-    mov dx, 0
+    loop_copy_ciphers:
+        ; decrement index of arr_print
+        dec di 
+        mov dx, 0
+        div divisor
+        add dl, '0'
+        mov str_print[di], dl
 
-    ; mov si, arr_size
-    ; mov arr_size, 3
+        cmp ax, 0
+        jne loop_copy_ciphers
+    
+    ; jump over char ',' from str_print 
+    dec di
 
-    mov ax, arr[si] 
-
-    ; devide DX:AX by value of divisor
-    ; quotient is copied in AX and remainder in DX
-    div divisor
-
-    ; convert number from DX to corresponding ASCII number (of that cipher)
-    add dx, '0'
-
-    mov si, 0
-    ; mov str[si], dl
-    mov str_print[3], dl
-
+    ; when SI is 0 (corresponding to index 0 of arr) exit loop (does not jump)
+    cmp si, 0
+    jne loop_fill_str
 
 print:
     mov ah, 09h
