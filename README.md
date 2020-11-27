@@ -37,6 +37,7 @@ chmod +x compile.sh
 # SUCCESS !
 
 ```
+- for debugging inspect `logfile` (this file is created first time you run ./compile.sh)
 
 ### *Description:*
 - Compile `asm` file using dosemu:
