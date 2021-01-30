@@ -10,14 +10,14 @@ This is used for run `TASM.EXE /zi /la code.asm` and `TLINK.EXE /v code.obj`.
 - Install prerequisites:
 ```bash
 # install dosemu
-sudo add-apt-repository ppa:dosemu2/ppa \
-sudo apt update \
+sudo add-apt-repository ppa:dosemu2/ppa
+sudo apt update
 sudo apt install dosemu2 
 
 # install emu2
-git clone https://github.com/dmsc/emu2.git \
-cd emu2 \
-make \
+git clone https://github.com/dmsc/emu2.git
+cd emu2
+make
 sudo cp emu2 /usr/bin
 ```
 ### *Install:*
